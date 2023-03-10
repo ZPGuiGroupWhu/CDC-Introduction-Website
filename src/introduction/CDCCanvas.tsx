@@ -342,6 +342,7 @@ const CDCCanvas: FC = (): ReactElement => {
             data: ['Data loading', 'DCM calculation', 'Boundary points identification', 'Internal points connection', 'Clusters generation']
         },
         baseOption: {
+            animation: false,
             dataset: [
                 {
                     source: resultData
@@ -360,10 +361,35 @@ const CDCCanvas: FC = (): ReactElement => {
                 },
                 scale: true
             },
-            // tooltip: {},
+            toolbox: {
+                right: 150, //150
+                top: 0,
+                feature: {
+                    dataZoom: {
+                        show: false
+                    },
+                    restore: {
+                        title: 'Zoom Restore',
+                        emphasis: {
+                            iconStyle: {
+                                textPosition: 'right'
+                            }
+                        }
+                    },
+                }
+            },
+            dataZoom: [
+                {
+                    type: 'inside'
+                },
+                {
+                    type: 'inside',
+                    orient: 'vertical'
+                },
+            ],
             grid: {
                 top: 35,
-                bottom: 72,
+                bottom: 75,
                 left: 70,
                 right: 185,
             },
@@ -441,7 +467,7 @@ const CDCCanvas: FC = (): ReactElement => {
                         encode: {
                             tooltip: [0, 1]
                         },
-                        transition: 'all',
+                        // transition: 'all',
                         renderItem: boundaryPointsIdentification,
                         data: boundaryData(),
                         silent: true
@@ -451,7 +477,7 @@ const CDCCanvas: FC = (): ReactElement => {
                         encode: {
                             tooltip: [0, 1]
                         },
-                        transition: 'all',
+                        // transition: 'all',
                         renderItem: boundaryPointsColor,
                     },
                 ]
@@ -568,11 +594,18 @@ const CDCCanvas: FC = (): ReactElement => {
                 }
             })
 
+            chartInstance.on('restore', function () {
+                option.timeline.currentIndex = currentIndexRef.current
+                // console.log(option)
+                chartInstance.setOption(option, true);
+            });
+
             chartInstance.on('mouseover', { seriesName: 'dataLoading' }, function (params: any) {
                 // console.log(params.dataIndex);
                 var option = chartInstance.getOption();
                 if (params.seriesName === 'dataLoading') {
                     option.series.push({
+                        animation: true,
                         animationDuration: 500,
                         type: 'graph',
                         layout: 'none',
@@ -607,6 +640,7 @@ const CDCCanvas: FC = (): ReactElement => {
                 if (params.seriesName === 'DCMCalculation') {
                     var option = chartInstance.getOption()
                     option.series.push({
+                        animation: true,
                         animationDuration: 500,
                         type: 'graph',
                         layout: 'none',

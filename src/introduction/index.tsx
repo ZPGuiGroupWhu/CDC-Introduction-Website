@@ -41,7 +41,7 @@ const Introduction: FC = (): ReactElement => {
         <Layout className="site-layout-background introduction" style={{ padding: '20px 14px', minHeight: 542 }}> {/* heigh: '100%' */}
             <Affix offsetTop={-50}>
                 <div className="navigation" style={{ position: 'absolute', top: 150 }}>
-                    <div style={{ backgroundColor: '#F0F2F5', width: 185, height: 40, fontSize: 16, fontWeight: 600, padding: '7px 0 0 5px' }}>Navigation</div>
+                    <div style={{ backgroundColor: '#F0F2F5', width: 185, height: 40, fontSize: 16, fontWeight: 600, padding: '7px 0 0 5px' }}>NAVIGATION</div>
                     <div style={{ padding: '5px 0 0 5px' }}>
                         <a onClick={() => { scrollToAnchor('interaction') }}>Interaction</a>
                     </div>
@@ -53,7 +53,7 @@ const Introduction: FC = (): ReactElement => {
                     </div>
                     <ul>
                         <li>
-                            <a onClick={() => { scrollToAnchor('DCM') }}>DCM calculation in 2d space</a>
+                            <a onClick={() => { scrollToAnchor('DCM') }}>DCM calculation in 2D</a>
                         </li>
                         <li>
                             <a onClick={() => { scrollToAnchor('distance') }}>reachable distance calculation</a>
@@ -110,7 +110,7 @@ const Introduction: FC = (): ReactElement => {
                     </div>
 
                     <div id='DCM'>
-                        <h3>DCM calculation in 2d space</h3>
+                        <h3>DCM calculation in 2D</h3>
                         <p>The core idea behind CDC is to distinguish boundary and internal points of clusters based on the distribution of KNNs.
                             The internal points of clusters tend to be surrounded by their neighboring points in all directions, while boundary points only include neighboring points within a certain directional range.
                             To measure such differences in the directional distribution, we define the variance of the angles formed by the KNNs in 2D space as the <span className="keyword">local Direction Centrality Metric (DCM)</span>: </p>
