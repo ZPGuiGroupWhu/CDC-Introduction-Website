@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.3c649049.css",
-    "main.js": "./static/js/main.c145b776.js",
+    "main.js": "./static/js/main.2266d360.js",
     "static/media/Zhipeng Gui.png": "./static/media/Zhipeng Gui.535819850cdffc00405f.png",
     "static/media/animation.gif": "./static/media/animation.1fcdd31b6398b440da53.gif",
     "static/media/high dimension.png": "./static/media/high dimension.f8b670bccda6461635e4.png",
@@ -16,10 +16,10 @@
     "static/media/Yang Liu.jpg": "./static/media/Yang Liu.00aa452bb32b66ee79b9.jpg",
     "index.html": "./index.html",
     "main.3c649049.css.map": "./static/css/main.3c649049.css.map",
-    "main.c145b776.js.map": "./static/js/main.c145b776.js.map"
+    "main.2266d360.js.map": "./static/js/main.2266d360.js.map"
   },
   "entrypoints": [
     "static/css/main.3c649049.css",
-    "static/js/main.c145b776.js"
+    "static/js/main.2266d360.js"
   ]
 }
